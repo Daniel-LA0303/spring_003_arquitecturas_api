@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Formulario de Estudiante</h1>
+    <form id="studentForm">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" name="name" required /><br /><br />
+
+      <label for="lastName">Apellido:</label>
+      <input type="text" id="lastName" name="lastName" required /><br /><br />
+
+      <label for="age">Edad:</label>
+      <input type="number" id="age" name="age" required /><br /><br />
+
+      <label for="course">Curso:</label>
+      <select id="course" name="course" required>
+        <option value="1">Matemáticas</option>
+        <option value="2">Ciencias</option></select
+      ><br /><br />
+
+      <button type="button" onclick="submitForm()">Enviar</button>
+    </form>
+
+    <h1>Grahpql</h1>
+    <script>
+      const query = `
+        query MyQuery2 {
+          findAllCourses {
+            id
+            name
+            category
+            teacher
+          }
+        }
+      `;
+
+      // Consumir la API GraphQL con fetch
+      fetch("http://localhost:8080/graphql", {
+        method: "POST", // Siempre se usa POST
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          query: query, // Envía el query como cuerpo de la petición
+        }),
+      })
+        .then((response) => response.json()) // Parsear la respuesta como JSON
+        .then((data) => {
+          // Maneja la respuesta
+          console.log(data.data.findAllCourses); // Imprime los cursos en la consola
+        })
+        .catch((error) => {
+          console.error("Error fetching GraphQL data:", error);
+        });
+
+      function submitForm() {
+        const name = document.getElementById("name").value;
+        const lastName = document.getElementById("lastName").value;
+        const age = document.getElementById("age").value;
+        const courseId = document.getElementById("course").value;
+
+        // Aquí puedes hacer algo con los datos, como enviarlos a un servidor
+        console.log(`Nombre: ${name}`);
+        console.log(`Apellido: ${lastName}`);
+        console.log(`Edad: ${age}`);
+        console.log(`Curso ID: ${courseId}`);
+
+        const mutation = `
+          mutation MyMutation {
+            createStudent(inputStudent: { 
+              courseId: "${courseId}", 
+              age: ${age}, 
+              lastName: "${lastName}", 
+              name: "${name}" 
+          }) {
+              age
+              course {
+                category
+                id
+                teacher
+                name
+              }
+              id
+              lastName
+              name
+            }
+          }
+      `;
+
+        // Ejemplo de cómo enviar los datos a un servidor usando fetch (comentado)
+        fetch("http://localhost:8080/graphql", {
+          method: "POST", // Siempre se usa POST
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            query: mutation, // Envía el query como cuerpo de la petición
+          }),
+        })
+          .then((response) => response.json()) // Parsear la respuesta como JSON
+          .then((data) => {
+            // Maneja la respuesta
+            console.log(data.data.findAllCourses); // Imprime los cursos en la consola
+          })
+          .catch((error) => {
+            console.error("Error fetching GraphQL data:", error);
+          });
+      }
+    </script>
+  </body>
+</html>

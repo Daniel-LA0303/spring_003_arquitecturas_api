@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="3.0" xmlns="https://jakarta.ee/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por Eclipse Implementation of JAXB v4.0.2 
+Visite https://eclipse-ee4j.github.io/jaxb-ri 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2024.11.02 a las 02:54:28 PM CST
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="http://soap.api.service.soap.mx.com">
+    <schemaBindings map="false">
+      <package name="com.mx.soap.service.api.soap.xmlclases"/>
+    </schemaBindings>
+    <bindings scd="tns:getAllEmployeesRequest">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.GetAllEmployeesRequest"/>
+    </bindings>
+    <bindings scd="tns:getAllEmployeesResponse">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.GetAllEmployeesResponse"/>
+    </bindings>
+    <bindings scd="~tns:serviceStatus">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.ServiceStatus"/>
+    </bindings>
+    <bindings scd="~tns:employeeInfoList">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.EmployeeInfoList"/>
+    </bindings>
+    <bindings scd="tns:addEmployeeRequest">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.AddEmployeeRequest"/>
+    </bindings>
+    <bindings scd="~tns:employeeInfoForAdd">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.EmployeeInfoForAdd"/>
+    </bindings>
+    <bindings scd="tns:addEmployeeResponse">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.AddEmployeeResponse"/>
+    </bindings>
+    <bindings scd="~tns:employeeInfo">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.EmployeeInfo"/>
+    </bindings>
+    <bindings scd="tns:getEmployeeByIdRequest">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.GetEmployeeByIdRequest"/>
+    </bindings>
+    <bindings scd="tns:getEmployeeResponse">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.GetEmployeeResponse"/>
+    </bindings>
+    <bindings scd="tns:updateEmployeeRequest">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.UpdateEmployeeRequest"/>
+    </bindings>
+    <bindings scd="tns:updateEmployeeResponse">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.UpdateEmployeeResponse"/>
+    </bindings>
+    <bindings scd="tns:deleteEmployeeRequest">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.DeleteEmployeeRequest"/>
+    </bindings>
+    <bindings scd="tns:deleteEmployeeResponse">
+      <class ref="com.mx.soap.service.api.soap.xmlclases.DeleteEmployeeResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+
