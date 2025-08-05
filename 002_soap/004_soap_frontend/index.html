@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Empleados</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body onload="fetchAllEmployees()">
+
+    <div class="container mt-5">
+        <h2>Lista de Empleados</h2>
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Departamento</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+            <!-- Los datos de los empleados se cargarán aquí -->
+        </tbody>
+        </table>
+    </div>
+
+    <input type="text" id="employeeId" placeholder="Ingrese ID del empleado">
+    <button onclick="fetchEmployeeById()">Buscar Empleado</button>
+    <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
